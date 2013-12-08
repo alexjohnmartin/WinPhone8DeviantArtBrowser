@@ -27,14 +27,14 @@ using WPAppStudio.Shared;
 namespace WPAppStudio.ViewModel
 {
     /// <summary>
-    /// Implementation of Mostpopular_Detail ViewModel.
+    /// Implementation of Latest_Detail ViewModel.
     /// </summary>
     [CompilerGenerated]
     [GeneratedCode("Radarc", "4.0")]
-    public partial class Mostpopular_DetailViewModel : ViewModelsBase.VMBase, IViewModels.IMostpopular_DetailViewModel, ViewModelsBase.INavigable
+    public partial class Latest_DetailViewModel : ViewModelsBase.VMBase, IViewModels.ILatest_DetailViewModel, ViewModelsBase.INavigable
     {       
 
-		private readonly Repositories.Mostpopular_MainFeedRss _mostpopular_MainFeedRss;
+		private readonly Repositories.Latest_LatestRss _latest_LatestRss;
 		private readonly IServices.IDialogService _dialogService;
 		private readonly IServices.INavigationService _navigationService;
 		private readonly IServices.ISpeechService _speechService;
@@ -42,17 +42,17 @@ namespace WPAppStudio.ViewModel
 		private readonly IServices.ILiveTileService _liveTileService;
 		
         /// <summary>
-        /// Initializes a new instance of the <see cref="Mostpopular_DetailViewModel" /> class.
+        /// Initializes a new instance of the <see cref="Latest_DetailViewModel" /> class.
         /// </summary>
-        /// <param name="mostpopular_MainFeedRss">The Mostpopular_ Main Feed Rss.</param>
+        /// <param name="latest_LatestRss">The Latest_ Latest Rss.</param>
         /// <param name="dialogService">The Dialog Service.</param>
         /// <param name="navigationService">The Navigation Service.</param>
         /// <param name="speechService">The Speech Service.</param>
         /// <param name="shareService">The Share Service.</param>
         /// <param name="liveTileService">The Live Tile Service.</param>
-        public Mostpopular_DetailViewModel(Repositories.Mostpopular_MainFeedRss mostpopular_MainFeedRss, IServices.IDialogService dialogService, IServices.INavigationService navigationService, IServices.ISpeechService speechService, IServices.IShareService shareService, IServices.ILiveTileService liveTileService)
+        public Latest_DetailViewModel(Repositories.Latest_LatestRss latest_LatestRss, IServices.IDialogService dialogService, IServices.INavigationService navigationService, IServices.ISpeechService speechService, IServices.IShareService shareService, IServices.ILiveTileService liveTileService)
         {
-			_mostpopular_MainFeedRss = mostpopular_MainFeedRss;
+			_latest_LatestRss = latest_LatestRss;
 			_dialogService = dialogService;
 			_navigationService = navigationService;
 			_speechService = speechService;
@@ -78,123 +78,123 @@ namespace WPAppStudio.ViewModel
             }
         }
 	
-		private bool _hasNextpanoramaMostpopular_Detail0;
+		private bool _hasNextpanoramaLatest_Detail0;
 
         /// <summary>
-        /// HasNextpanoramaMostpopular_Detail0 property.
+        /// HasNextpanoramaLatest_Detail0 property.
         /// </summary>		
-        public bool HasNextpanoramaMostpopular_Detail0
+        public bool HasNextpanoramaLatest_Detail0
         {
             get
             {
-				return _hasNextpanoramaMostpopular_Detail0;
+				return _hasNextpanoramaLatest_Detail0;
             }
             set
             {
-                SetProperty(ref _hasNextpanoramaMostpopular_Detail0, value);
+                SetProperty(ref _hasNextpanoramaLatest_Detail0, value);
             }
         }
 	
-		private bool _hasPreviouspanoramaMostpopular_Detail0;
+		private bool _hasPreviouspanoramaLatest_Detail0;
 
         /// <summary>
-        /// HasPreviouspanoramaMostpopular_Detail0 property.
+        /// HasPreviouspanoramaLatest_Detail0 property.
         /// </summary>		
-        public bool HasPreviouspanoramaMostpopular_Detail0
+        public bool HasPreviouspanoramaLatest_Detail0
         {
             get
             {
-				return _hasPreviouspanoramaMostpopular_Detail0;
+				return _hasPreviouspanoramaLatest_Detail0;
             }
             set
             {
-                SetProperty(ref _hasPreviouspanoramaMostpopular_Detail0, value);
+                SetProperty(ref _hasPreviouspanoramaLatest_Detail0, value);
             }
         }
 
         /// <summary>
-        /// Delegate method for the TextToSpeechMostpopular_DetailStaticControlCommand command.
+        /// Delegate method for the TextToSpeechLatest_DetailStaticControlCommand command.
         /// </summary>
-        public  void TextToSpeechMostpopular_DetailStaticControlCommandDelegate() 
+        public  void TextToSpeechLatest_DetailStaticControlCommandDelegate() 
         {
 				_speechService.TextToSpeech(CurrentRssSearchResult.Title + " " + CurrentRssSearchResult.Content);
         }
 		
 
-        private ICommand _textToSpeechMostpopular_DetailStaticControlCommand;
+        private ICommand _textToSpeechLatest_DetailStaticControlCommand;
 
         /// <summary>
-        /// Gets the TextToSpeechMostpopular_DetailStaticControlCommand command.
+        /// Gets the TextToSpeechLatest_DetailStaticControlCommand command.
         /// </summary>
-        public ICommand TextToSpeechMostpopular_DetailStaticControlCommand
+        public ICommand TextToSpeechLatest_DetailStaticControlCommand
         {
-            get { return _textToSpeechMostpopular_DetailStaticControlCommand = _textToSpeechMostpopular_DetailStaticControlCommand ?? new ViewModelsBase.DelegateCommand(TextToSpeechMostpopular_DetailStaticControlCommandDelegate); }
+            get { return _textToSpeechLatest_DetailStaticControlCommand = _textToSpeechLatest_DetailStaticControlCommand ?? new ViewModelsBase.DelegateCommand(TextToSpeechLatest_DetailStaticControlCommandDelegate); }
         }
 
         /// <summary>
-        /// Delegate method for the ShareMostpopular_DetailStaticControlCommand command.
+        /// Delegate method for the ShareLatest_DetailStaticControlCommand command.
         /// </summary>
-        public  void ShareMostpopular_DetailStaticControlCommandDelegate() 
+        public  void ShareLatest_DetailStaticControlCommandDelegate() 
         {
 				_shareService.Share(CurrentRssSearchResult.Title, CurrentRssSearchResult.Content, CurrentRssSearchResult.FeedUrl, CurrentRssSearchResult.ImageUrl);
         }
 		
 
-        private ICommand _shareMostpopular_DetailStaticControlCommand;
+        private ICommand _shareLatest_DetailStaticControlCommand;
 
         /// <summary>
-        /// Gets the ShareMostpopular_DetailStaticControlCommand command.
+        /// Gets the ShareLatest_DetailStaticControlCommand command.
         /// </summary>
-        public ICommand ShareMostpopular_DetailStaticControlCommand
+        public ICommand ShareLatest_DetailStaticControlCommand
         {
-            get { return _shareMostpopular_DetailStaticControlCommand = _shareMostpopular_DetailStaticControlCommand ?? new ViewModelsBase.DelegateCommand(ShareMostpopular_DetailStaticControlCommandDelegate); }
+            get { return _shareLatest_DetailStaticControlCommand = _shareLatest_DetailStaticControlCommand ?? new ViewModelsBase.DelegateCommand(ShareLatest_DetailStaticControlCommandDelegate); }
         }
 
         /// <summary>
-        /// Delegate method for the PinToStartMostpopular_DetailStaticControlCommand command.
+        /// Delegate method for the PinToStartLatest_DetailStaticControlCommand command.
         /// </summary>
-        public  void PinToStartMostpopular_DetailStaticControlCommandDelegate() 
+        public  void PinToStartLatest_DetailStaticControlCommandDelegate() 
         {
-				_liveTileService.PinToStart(typeof(IViewModels.IMostpopular_DetailViewModel), CreateTileInfoMostpopular_DetailStaticControl());
+				_liveTileService.PinToStart(typeof(IViewModels.ILatest_DetailViewModel), CreateTileInfoLatest_DetailStaticControl());
         }
 		
 
-        private ICommand _pinToStartMostpopular_DetailStaticControlCommand;
+        private ICommand _pinToStartLatest_DetailStaticControlCommand;
 
         /// <summary>
-        /// Gets the PinToStartMostpopular_DetailStaticControlCommand command.
+        /// Gets the PinToStartLatest_DetailStaticControlCommand command.
         /// </summary>
-        public ICommand PinToStartMostpopular_DetailStaticControlCommand
+        public ICommand PinToStartLatest_DetailStaticControlCommand
         {
-            get { return _pinToStartMostpopular_DetailStaticControlCommand = _pinToStartMostpopular_DetailStaticControlCommand ?? new ViewModelsBase.DelegateCommand(PinToStartMostpopular_DetailStaticControlCommandDelegate); }
+            get { return _pinToStartLatest_DetailStaticControlCommand = _pinToStartLatest_DetailStaticControlCommand ?? new ViewModelsBase.DelegateCommand(PinToStartLatest_DetailStaticControlCommandDelegate); }
         }
 
         /// <summary>
-        /// Delegate method for the GoToSourceMostpopular_DetailStaticControlCommand command.
+        /// Delegate method for the GoToSourceLatest_DetailStaticControlCommand command.
         /// </summary>
-        public  void GoToSourceMostpopular_DetailStaticControlCommandDelegate() 
+        public  void GoToSourceLatest_DetailStaticControlCommandDelegate() 
         {
 				_navigationService.NavigateTo(string.IsNullOrEmpty(CurrentRssSearchResult.FeedUrl) ? null : new Uri(CurrentRssSearchResult.FeedUrl));
         }
 		
 
-        private ICommand _goToSourceMostpopular_DetailStaticControlCommand;
+        private ICommand _goToSourceLatest_DetailStaticControlCommand;
 
         /// <summary>
-        /// Gets the GoToSourceMostpopular_DetailStaticControlCommand command.
+        /// Gets the GoToSourceLatest_DetailStaticControlCommand command.
         /// </summary>
-        public ICommand GoToSourceMostpopular_DetailStaticControlCommand
+        public ICommand GoToSourceLatest_DetailStaticControlCommand
         {
-            get { return _goToSourceMostpopular_DetailStaticControlCommand = _goToSourceMostpopular_DetailStaticControlCommand ?? new ViewModelsBase.DelegateCommand(GoToSourceMostpopular_DetailStaticControlCommandDelegate); }
+            get { return _goToSourceLatest_DetailStaticControlCommand = _goToSourceLatest_DetailStaticControlCommand ?? new ViewModelsBase.DelegateCommand(GoToSourceLatest_DetailStaticControlCommandDelegate); }
         }
 
         /// <summary>
-        /// Delegate method for the NextpanoramaMostpopular_Detail0 command.
+        /// Delegate method for the NextpanoramaLatest_Detail0 command.
         /// </summary>
-        public async void NextpanoramaMostpopular_Detail0Delegate() 
+        public async void NextpanoramaLatest_Detail0Delegate() 
         {
 				LoadingCurrentRssSearchResult = true;
-			var next = await  _mostpopular_MainFeedRss.Next(CurrentRssSearchResult);
+			var next = await  _latest_LatestRss.Next(CurrentRssSearchResult);
 
 			if(next != null)
 				CurrentRssSearchResult = next;
@@ -211,23 +211,23 @@ namespace WPAppStudio.ViewModel
             set { SetProperty(ref _loadingCurrentRssSearchResult, value); }
         }
 
-        private ICommand _nextpanoramaMostpopular_Detail0;
+        private ICommand _nextpanoramaLatest_Detail0;
 
         /// <summary>
-        /// Gets the NextpanoramaMostpopular_Detail0 command.
+        /// Gets the NextpanoramaLatest_Detail0 command.
         /// </summary>
-        public ICommand NextpanoramaMostpopular_Detail0
+        public ICommand NextpanoramaLatest_Detail0
         {
-            get { return _nextpanoramaMostpopular_Detail0 = _nextpanoramaMostpopular_Detail0 ?? new ViewModelsBase.DelegateCommand(NextpanoramaMostpopular_Detail0Delegate); }
+            get { return _nextpanoramaLatest_Detail0 = _nextpanoramaLatest_Detail0 ?? new ViewModelsBase.DelegateCommand(NextpanoramaLatest_Detail0Delegate); }
         }
 
         /// <summary>
-        /// Delegate method for the PreviouspanoramaMostpopular_Detail0 command.
+        /// Delegate method for the PreviouspanoramaLatest_Detail0 command.
         /// </summary>
-        public async void PreviouspanoramaMostpopular_Detail0Delegate() 
+        public async void PreviouspanoramaLatest_Detail0Delegate() 
         {
 				LoadingCurrentRssSearchResult = true;
-			var prev = await  _mostpopular_MainFeedRss.Previous(CurrentRssSearchResult);
+			var prev = await  _latest_LatestRss.Previous(CurrentRssSearchResult);
 
 			if(prev != null)
 				CurrentRssSearchResult = prev;
@@ -236,20 +236,20 @@ namespace WPAppStudio.ViewModel
         }
 		
 
-        private ICommand _previouspanoramaMostpopular_Detail0;
+        private ICommand _previouspanoramaLatest_Detail0;
 
         /// <summary>
-        /// Gets the PreviouspanoramaMostpopular_Detail0 command.
+        /// Gets the PreviouspanoramaLatest_Detail0 command.
         /// </summary>
-        public ICommand PreviouspanoramaMostpopular_Detail0
+        public ICommand PreviouspanoramaLatest_Detail0
         {
-            get { return _previouspanoramaMostpopular_Detail0 = _previouspanoramaMostpopular_Detail0 ?? new ViewModelsBase.DelegateCommand(PreviouspanoramaMostpopular_Detail0Delegate); }
+            get { return _previouspanoramaLatest_Detail0 = _previouspanoramaLatest_Detail0 ?? new ViewModelsBase.DelegateCommand(PreviouspanoramaLatest_Detail0Delegate); }
         }
 
         private async void RefreshHasPrevNext()
         {
-            HasPreviouspanoramaMostpopular_Detail0 = await _mostpopular_MainFeedRss.HasPrevious(CurrentRssSearchResult);
-			HasNextpanoramaMostpopular_Detail0 = await _mostpopular_MainFeedRss.HasNext(CurrentRssSearchResult);
+            HasPreviouspanoramaLatest_Detail0 = await _latest_LatestRss.HasPrevious(CurrentRssSearchResult);
+			HasNextpanoramaLatest_Detail0 = await _latest_LatestRss.HasNext(CurrentRssSearchResult);
 			LoadingCurrentRssSearchResult = false;
 		}
 		public object NavigationContext
@@ -263,10 +263,10 @@ namespace WPAppStudio.ViewModel
             }
         }
         /// <summary>
-        /// Initializes a <see cref="Services.TileInfo" /> object for the Mostpopular_DetailStaticControl control.
+        /// Initializes a <see cref="Services.TileInfo" /> object for the Latest_DetailStaticControl control.
         /// </summary>
 		/// <returns>A <see cref="Services.TileInfo" /> object.</returns>
-        public Services.TileInfo CreateTileInfoMostpopular_DetailStaticControl()
+        public Services.TileInfo CreateTileInfoLatest_DetailStaticControl()
         {
             var tileInfo = new Services.TileInfo
             {

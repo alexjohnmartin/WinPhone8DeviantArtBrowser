@@ -38,6 +38,7 @@ namespace WPAppStudio.ViewModel
 		private readonly IServices.INavigationService _navigationService;
 		private readonly IServices.ILockScreenService _lockScreenService;
 		private readonly Repositories.IMostpopular_MainFeedRss _mostpopular_MainFeedRss;
+		private readonly Repositories.ILatest_LatestRss _latest_LatestRss;
 		
         /// <summary>
         /// Initializes a new instance of the <see cref="Mostpopular_NewsViewModel" /> class.
@@ -46,12 +47,14 @@ namespace WPAppStudio.ViewModel
         /// <param name="navigationService">The Navigation Service.</param>
         /// <param name="lockScreenService">The Lock Screen Service.</param>
         /// <param name="mostpopular_MainFeedRss">The Mostpopular_ Main Feed Rss.</param>
-        public Mostpopular_NewsViewModel(IServices.IDialogService dialogService, IServices.INavigationService navigationService, IServices.ILockScreenService lockScreenService, Repositories.IMostpopular_MainFeedRss mostpopular_MainFeedRss)
+        /// <param name="latest_LatestRss">The Latest_ Latest Rss.</param>
+        public Mostpopular_NewsViewModel(IServices.IDialogService dialogService, IServices.INavigationService navigationService, IServices.ILockScreenService lockScreenService, Repositories.IMostpopular_MainFeedRss mostpopular_MainFeedRss, Repositories.ILatest_LatestRss latest_LatestRss)
         {
 			_dialogService = dialogService;
 			_navigationService = navigationService;
 			_lockScreenService = lockScreenService;
 			_mostpopular_MainFeedRss = mostpopular_MainFeedRss;
+			_latest_LatestRss = latest_LatestRss;
         }
 		
 	
@@ -91,6 +94,45 @@ namespace WPAppStudio.ViewModel
                 _selectedMostpopular_NewsListControlCollection = value;
                 if (value != null)
                     _navigationService.NavigateTo<IViewModels.IMostpopular_DetailViewModel>(_selectedMostpopular_NewsListControlCollection);
+            }
+        }
+	
+		private ObservableCollection<EntitiesBase.RssSearchResult> _latest_NewsListControlCollection;
+
+        /// <summary>
+        /// Latest_NewsListControlCollection property.
+        /// </summary>		
+        public ObservableCollection<EntitiesBase.RssSearchResult> Latest_NewsListControlCollection
+        {
+            get
+            {
+				
+                if(_latest_NewsListControlCollection == null)
+					GetLatest_NewsListControlCollectionData();
+				return _latest_NewsListControlCollection;     
+            }
+            set
+            {
+                SetProperty(ref _latest_NewsListControlCollection, value);
+            }
+        }
+	
+		private EntitiesBase.RssSearchResult _selectedLatest_NewsListControlCollection;
+
+        /// <summary>
+        /// SelectedLatest_NewsListControlCollection property.
+        /// </summary>		
+        public EntitiesBase.RssSearchResult SelectedLatest_NewsListControlCollection
+        {
+            get
+            {
+				return _selectedLatest_NewsListControlCollection;
+            }
+            set
+            {
+                _selectedLatest_NewsListControlCollection = value;
+                if (value != null)
+                    _navigationService.NavigateTo<IViewModels.ILatest_DetailViewModel>(_selectedLatest_NewsListControlCollection);
             }
         }
 
@@ -157,6 +199,68 @@ namespace WPAppStudio.ViewModel
         }
 
         /// <summary>
+        /// Delegate method for the RefreshLatest_NewsListControlCollectionCommand command.
+        /// </summary>
+        public async void RefreshLatest_NewsListControlCollectionCommandDelegate() 
+        {
+			try
+			{
+				LoadingLatest_NewsListControlCollection = true;
+				var items = await  _latest_LatestRss.Refresh();
+				Latest_NewsListControlCollection = items;
+			}
+            catch (Exception ex)
+            {
+				Latest_NewsListControlCollection = null;
+		
+                Debug.WriteLine(ex.ToString());
+                _dialogService.Show(Localization.AppResources.rssError + Environment.NewLine + Localization.AppResources.TryAgain);
+            }
+            finally
+            {
+				LoadingLatest_NewsListControlCollection = false;
+			}
+        }
+		
+		
+        private bool _loadingLatest_NewsListControlCollection;
+		
+        public bool LoadingLatest_NewsListControlCollection
+        {
+            get { return _loadingLatest_NewsListControlCollection; }
+            set { SetProperty(ref _loadingLatest_NewsListControlCollection, value); }
+        }
+
+        private ICommand _refreshLatest_NewsListControlCollectionCommand;
+
+        /// <summary>
+        /// Gets the RefreshLatest_NewsListControlCollectionCommand command.
+        /// </summary>
+        public ICommand RefreshLatest_NewsListControlCollectionCommand
+        {
+            get { return _refreshLatest_NewsListControlCollectionCommand = _refreshLatest_NewsListControlCollectionCommand ?? new ViewModelsBase.DelegateCommand(RefreshLatest_NewsListControlCollectionCommandDelegate); }
+        }
+
+        /// <summary>
+        /// Delegate method for the GetLatest_NewsListControlCollectionCommand command.
+        /// </summary>
+        public  void GetLatest_NewsListControlCollectionCommandDelegate(int pageNumber= 0) 
+        {
+				GetLatest_NewsListControlCollectionData(pageNumber);
+        }
+		
+
+        private ICommand _getLatest_NewsListControlCollectionCommand;
+
+        /// <summary>
+        /// Gets the GetLatest_NewsListControlCollectionCommand command.
+        /// </summary>
+        public ICommand GetLatest_NewsListControlCollectionCommand
+        {
+            get { return _getLatest_NewsListControlCollectionCommand = _getLatest_NewsListControlCollectionCommand ?? new ViewModelsBase.DelegateCommand<int>(GetLatest_NewsListControlCollectionCommandDelegate); }
+        }
+
+        /// <summary>
         /// Delegate method for the SetLockScreenCommand command.
         /// </summary>
         public  void SetLockScreenCommandDelegate() 
@@ -214,6 +318,29 @@ namespace WPAppStudio.ViewModel
             finally
             {
 				LoadingMostpopular_NewsListControlCollection = false;
+			}
+		}
+
+        private async void GetLatest_NewsListControlCollectionData(int pageNumber = 0)
+        {
+	
+			try
+			{
+				LoadingLatest_NewsListControlCollection = true;
+			
+				var items = await _latest_LatestRss.GetData();
+                Latest_NewsListControlCollection = items;
+			}
+            catch (Exception ex)
+            {
+				Latest_NewsListControlCollection = null;
+		
+                Debug.WriteLine(ex.ToString());
+                _dialogService.Show(Localization.AppResources.rssError + Environment.NewLine + Localization.AppResources.TryAgain);
+            }
+            finally
+            {
+				LoadingLatest_NewsListControlCollection = false;
 			}
 		}
     }

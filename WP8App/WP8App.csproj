@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c3f7e596-ba81-480a-ada5-45ec3ff4ac71}</ProjectGuid>
+    <ProjectGuid>{665ee77c-f182-4e69-8be1-99f094e6628c}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -285,12 +285,17 @@
     <Compile Include="View\Mostpopular_News.xaml.cs">
       <DependentUpon>Mostpopular_News.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Latest_Detail.xaml.cs">
+      <DependentUpon>Latest_Detail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Mostpopular_Detail.xaml.cs">
       <DependentUpon>Mostpopular_Detail.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Mostpopular_NewsViewModel.cs" />
+    <Compile Include="ViewModel\Latest_DetailViewModel.cs" />
     <Compile Include="ViewModel\Mostpopular_DetailViewModel.cs" />
     <Compile Include="ViewModel\Interfaces\IMostpopular_NewsViewModel.cs" />
+    <Compile Include="ViewModel\Interfaces\ILatest_DetailViewModel.cs" />
     <Compile Include="ViewModel\Interfaces\IMostpopular_DetailViewModel.cs" />
     <Compile Include="Resources\AppResources.resx.cs">
       <DependentUpon>AppResources.resx</DependentUpon>
@@ -352,6 +357,7 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\Mostpopular_News.xaml" />
+    <Page Include="View\Latest_Detail.xaml" />
     <Page Include="View\Mostpopular_Detail.xaml" />
     <Page Include="View\About.xaml" />
     <Page Include="View\License.xaml" />

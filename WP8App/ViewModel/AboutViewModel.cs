@@ -81,7 +81,7 @@ namespace WPAppStudio.ViewModel
         /// </summary>
         public AboutViewModel(INavigationService navigationService, IShareService shareService)
         {
-			_title = @"DeviantArt browser";
+			_title = @"dA browser";
 			_description = @"Simple browser for the amazing images on DeviantArt"; 
 			_version = "v1";
 			_appLink = "https://apps.windowsstore.com/DashBoard/DownloadAppXap?appId=92b69045-ce12-4432-ad54-3ed399dc2688";

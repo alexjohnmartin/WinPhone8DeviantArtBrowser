@@ -1,5 +1,5 @@
 <phone:PhoneApplicationPage 
-    x:Class="WPAppStudio.View.Mostpopular_Detail"
+    x:Class="WPAppStudio.View.Latest_Detail"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:ctl="clr-namespace:WPAppStudio.Controls"
@@ -17,7 +17,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource CustomApplicationTextBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-	DataContext="{Binding Path=Mostpopular_DetailViewModel, Source={StaticResource ViewModelLocator}}">
+	DataContext="{Binding Path=Latest_DetailViewModel, Source={StaticResource ViewModelLocator}}">
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
             <toolkit:NavigationInTransition.Backward>
@@ -40,12 +40,12 @@
     </toolkit:TransitionService.NavigationOutTransition>
     <phone:PhoneApplicationPage.Resources>
         
-		<mytoolkitpaging:BindableApplicationBar x:Key="PanoramaMostpopular_Detail0AppBar" IsVisible="True" IsMenuEnabled="True" Mode="Minimized" BackgroundColor="{StaticResource CustomApplicationAppBarBackgroundColor}" Opacity="0.99" ForegroundColor="White">
-			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaMostpopular_Detail0TextToSpeechBtn" IconUri="/Images/Icons/Dark/TextToSpeech.png" Text="{Binding Path=LocalizedResources.TextToSpeech, Source={StaticResource LocalizedStrings}}" Command="{Binding TextToSpeechMostpopular_DetailStaticControlCommand}"  />
-			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaMostpopular_Detail0PinToStartBtn" IconUri="/Images/Icons/Dark/PinToStart.png" Text="{Binding Path=LocalizedResources.PinToStart, Source={StaticResource LocalizedStrings}}" Command="{Binding PinToStartMostpopular_DetailStaticControlCommand}"  />
-			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaMostpopular_Detail0GoToSourceBtn" IconUri="/Images/Icons/Dark/GoToSource.png" Text="{Binding Path=LocalizedResources.GoToSource, Source={StaticResource LocalizedStrings}}" Command="{Binding GoToSourceMostpopular_DetailStaticControlCommand}"  />
+		<mytoolkitpaging:BindableApplicationBar x:Key="PanoramaLatest_Detail0AppBar" IsVisible="True" IsMenuEnabled="True" Mode="Minimized" BackgroundColor="{StaticResource CustomApplicationAppBarBackgroundColor}" Opacity="0.99" ForegroundColor="White">
+			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaLatest_Detail0TextToSpeechBtn" IconUri="/Images/Icons/Dark/TextToSpeech.png" Text="{Binding Path=LocalizedResources.TextToSpeech, Source={StaticResource LocalizedStrings}}" Command="{Binding TextToSpeechLatest_DetailStaticControlCommand}"  />
+			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaLatest_Detail0PinToStartBtn" IconUri="/Images/Icons/Dark/PinToStart.png" Text="{Binding Path=LocalizedResources.PinToStart, Source={StaticResource LocalizedStrings}}" Command="{Binding PinToStartLatest_DetailStaticControlCommand}"  />
+			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaLatest_Detail0GoToSourceBtn" IconUri="/Images/Icons/Dark/GoToSource.png" Text="{Binding Path=LocalizedResources.GoToSource, Source={StaticResource LocalizedStrings}}" Command="{Binding GoToSourceLatest_DetailStaticControlCommand}"  />
 			<mytoolkitpaging:BindableApplicationBar.MenuItems>
-				<mytoolkitpaging:BindableApplicationBarMenuItem x:Name="PanoramaMostpopular_Detail0ShareBtn" Text="{Binding Path=LocalizedResources.Share, Source={StaticResource LocalizedStrings}}" Command="{Binding ShareMostpopular_DetailStaticControlCommand}"/>
+				<mytoolkitpaging:BindableApplicationBarMenuItem x:Name="PanoramaLatest_Detail0ShareBtn" Text="{Binding Path=LocalizedResources.Share, Source={StaticResource LocalizedStrings}}" Command="{Binding ShareLatest_DetailStaticControlCommand}"/>
 			</mytoolkitpaging:BindableApplicationBar.MenuItems>		
 		</mytoolkitpaging:BindableApplicationBar>	
     </phone:PhoneApplicationPage.Resources>
@@ -57,20 +57,20 @@
         <Grid Grid.Row="0" Visibility="{Binding IsInternetAvailable}" Background="{StaticResource CustomApplicationAppBarBackgroundBrush}" Height="30">
             <TextBlock Text="{Binding Path=LocalizedResources.NoConnection, Source={StaticResource LocalizedStrings}}" Foreground="White" Margin="10, 0"/>
         </Grid>
-        <phone:Panorama x:Name="PanoramaMostpopular_Detail" Grid.Row="2" Foreground="{StaticResource CustomApplicationTextBrush}" Background="{StaticResource CustomApplicationBackgroundBrush}" SelectionChanged="panoramaMostpopular_Detail_SelectionChanged">
+        <phone:Panorama x:Name="PanoramaLatest_Detail" Grid.Row="2" Foreground="{StaticResource CustomApplicationTextBrush}" Background="{StaticResource CustomApplicationBackgroundBrush}" SelectionChanged="panoramaLatest_Detail_SelectionChanged">
 		    <phone:Panorama.Title>
 				<StackPanel Orientation="Horizontal" Margin="0,15,0,0">
 					<Image Height="85" Width="85" Source="http://appstudiodata.blob.core.windows.net/apps/249022/92b69045-ce12-4432-ad54-3ed399dc2688/res/Logo-f39fee7d-1a66-4561-bec7-3ef3fde95aee.png" Stretch="Uniform" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5,0,10,5" RenderTransformOrigin="0.5,0.5" />
 					<TextBlock FontSize="92" Text="dA browser" FontFamily="Segoe WP Light" Foreground="{StaticResource CustomTitleApplicationTextBrush}" VerticalAlignment="Stretch"/>
                 </StackPanel>
             </phone:Panorama.Title>
-			<phone:PanoramaItem x:Name="PanoramaMostpopular_Detail0" Margin="0,0,0,25">
+			<phone:PanoramaItem x:Name="PanoramaLatest_Detail0" Margin="0,0,0,25">
 				<phone:PanoramaItem.Header>
 					<Grid MaxHeight="225" Margin="0,7,0,0">
 						<TextBlock Text="{Binding CurrentRssSearchResult.Title, Converter={StaticResource SanitizeString}}" FontSize="56" TextWrapping="Wrap" TextTrimming="WordEllipsis" Foreground="{StaticResource CustomApplicationTextBrush}"/>
 					</Grid>
 				</phone:PanoramaItem.Header>
-				<ctl:FlipControl NextElementCommand="{Binding NextpanoramaMostpopular_Detail0}" PreviousElementCommand="{Binding PreviouspanoramaMostpopular_Detail0}" ShowPreviousButton="{Binding HasPreviouspanoramaMostpopular_Detail0}" ShowNextButton="{Binding HasNextpanoramaMostpopular_Detail0}">
+				<ctl:FlipControl NextElementCommand="{Binding NextpanoramaLatest_Detail0}" PreviousElementCommand="{Binding PreviouspanoramaLatest_Detail0}" ShowPreviousButton="{Binding HasPreviouspanoramaLatest_Detail0}" ShowNextButton="{Binding HasNextpanoramaLatest_Detail0}">
 					<ctl:FlipControl.InnerContent>
 				<Grid Margin="10,5,5,5">	
                     <ScrollViewer>

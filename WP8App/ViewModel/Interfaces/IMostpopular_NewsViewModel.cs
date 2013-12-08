@@ -29,6 +29,14 @@ namespace WPAppStudio.ViewModel.Interfaces
         /// Gets/Sets the SelectedMostpopular_NewsListControlCollection property.
         /// </summary>
 		EntitiesBase.RssSearchResult SelectedMostpopular_NewsListControlCollection { get; set; }
+        /// <summary>
+        /// Gets/Sets the Latest_NewsListControlCollection property.
+        /// </summary>
+		ObservableCollection<EntitiesBase.RssSearchResult> Latest_NewsListControlCollection { get; set; }
+        /// <summary>
+        /// Gets/Sets the SelectedLatest_NewsListControlCollection property.
+        /// </summary>
+		EntitiesBase.RssSearchResult SelectedLatest_NewsListControlCollection { get; set; }
         
         /// <summary>
         /// Gets the RefreshMostpopular_NewsListControlCollectionCommand command.
@@ -40,6 +48,18 @@ namespace WPAppStudio.ViewModel.Interfaces
         /// Gets the GetMostpopular_NewsListControlCollectionCommand command.
         /// </summary>
 		ICommand GetMostpopular_NewsListControlCollectionCommand { get; }
+
+        
+        /// <summary>
+        /// Gets the RefreshLatest_NewsListControlCollectionCommand command.
+        /// </summary>
+		ICommand RefreshLatest_NewsListControlCollectionCommand { get; }
+
+        
+        /// <summary>
+        /// Gets the GetLatest_NewsListControlCollectionCommand command.
+        /// </summary>
+		ICommand GetLatest_NewsListControlCollectionCommand { get; }
 
         
         /// <summary>

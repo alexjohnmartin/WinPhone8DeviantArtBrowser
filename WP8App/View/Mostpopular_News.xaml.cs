@@ -70,6 +70,8 @@ namespace WPAppStudio.View
             base.OnNavigatedTo(e);
 		
             Mostpopular_NewsListControl.SelectedItem = null;
+		
+            Latest_NewsListControl.SelectedItem = null;
 		}
     }
 }

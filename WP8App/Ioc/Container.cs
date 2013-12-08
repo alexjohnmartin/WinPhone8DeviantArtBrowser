@@ -48,6 +48,7 @@ namespace WPAppStudio.Ioc
 			_currentContainer.RegisterType<IServices.IInternetService, Services.InternetService>(new ContainerControlledLifetimeManager());
 			_currentContainer.RegisterType<RepositoriesBase.IXmlDataSource, RepositoriesBase.XmlDataSource>();
             _currentContainer.RegisterType<IViewModels.IMostpopular_NewsViewModel, ViewModels.Mostpopular_NewsViewModel>();
+            _currentContainer.RegisterType<IViewModels.ILatest_DetailViewModel, ViewModels.Latest_DetailViewModel>();
             _currentContainer.RegisterType<IViewModels.IMostpopular_DetailViewModel, ViewModels.Mostpopular_DetailViewModel>();
 
 			_currentContainer.RegisterType<IViewModels.IAboutViewModel, ViewModels.AboutViewModel>(new ContainerControlledLifetimeManager());
@@ -56,10 +57,12 @@ namespace WPAppStudio.Ioc
 			if (!System.ComponentModel.DesignerProperties.IsInDesignTool)
             {
 				_currentContainer.RegisterType<Repositories.IMostpopular_MainFeedRss, Repositories.Mostpopular_MainFeedRss>(new ContainerControlledLifetimeManager());
+				_currentContainer.RegisterType<Repositories.ILatest_LatestRss, Repositories.Latest_LatestRss>(new ContainerControlledLifetimeManager());
 			}
 			else
 			{
 				_currentContainer.RegisterType<Repositories.IMostpopular_MainFeedRss, Repositories.FakeMostpopular_MainFeedRss>(new ContainerControlledLifetimeManager());
+				_currentContainer.RegisterType<Repositories.ILatest_LatestRss, Repositories.FakeLatest_LatestRss>(new ContainerControlledLifetimeManager());
 			
 			}
         }

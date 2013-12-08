@@ -10,7 +10,7 @@
 
     <Application.Resources>
         
-        <sys:String x:Key="AppName">DeviantArt browser</sys:String>
+        <sys:String x:Key="AppName">dA browser</sys:String>
 
 		<!-- ViewModel locator -->
         <services:ViewModelLocatorService x:Key="ViewModelLocator"/>

@@ -49,6 +49,14 @@ namespace WPAppStudio.Services
         }
 
         /// <summary>
+        /// Gets the reference to a Latest_DetailViewModel.
+        /// </summary>
+		public IViewModels.ILatest_DetailViewModel Latest_DetailViewModel
+        {
+            get { return _container.Resolve<IViewModels.ILatest_DetailViewModel>(); }
+        }
+
+        /// <summary>
         /// Gets the reference to a Mostpopular_DetailViewModel.
         /// </summary>
 		public IViewModels.IMostpopular_DetailViewModel Mostpopular_DetailViewModel

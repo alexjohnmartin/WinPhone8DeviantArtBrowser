@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{00df51bd-c753-4813-ab45-1a37d55acd26}</ProjectGuid>
+    <ProjectGuid>{b3e2643d-0ba9-4ce0-bd8a-20134bfb27f5}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -109,8 +109,11 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Mostpopular_MainFeedRss.cs" />
+    <Compile Include="Latest_LatestRss.cs" />
     <Compile Include="Fakes\FakeMostpopular_MainFeedRss.cs" />
+    <Compile Include="Fakes\FakeLatest_LatestRss.cs" />
     <Compile Include="Interfaces\IMostpopular_MainFeedRss.cs" />
+    <Compile Include="Interfaces\ILatest_LatestRss.cs" />
     <Compile Include="Base\Xml\XmlDataSource.cs" />
     <Compile Include="Base\Xml\IXmlDataSource.cs" />
     <Compile Include="Base\Rss\Rss10FeedFormatter.cs" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{92b69045-ce12-4432-ad54-3ed399dc2688}" Title="DeviantArt browser" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="" Description="Simple browser for the amazing images on DeviantArt" Publisher="" PublisherID="{e7d94c95-4681-45a0-a8b4-5df4e482fb9e}">
-    <IconPath IsRelative="true" IsResource="false">Images\Logo-5b225b1a-58cc-4c2c-908e-3bd49db8b144.png</IconPath>
+  <App xmlns="" ProductID="{92b69045-ce12-4432-ad54-3ed399dc2688}" Title="dA browser" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="" Description="Simple browser for the amazing images on DeviantArt" Publisher="" PublisherID="{e7d94c95-4681-45a0-a8b4-5df4e482fb9e}">
+    <IconPath IsRelative="true" IsResource="false">Images\Logo-f39fee7d-1a66-4561-bec7-3ef3fde95aee.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>
       <Capability Name="ID_CAP_SENSORS"/>
@@ -21,14 +21,14 @@
     <Tokens>
       <PrimaryToken TokenID="MyDoWapp" TaskName="_default">
 	    <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Images/Logo-5b225b1a-58cc-4c2c-908e-3bd49db8b144.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Images/Logo-f39fee7d-1a66-4561-bec7-3ef3fde95aee.png</SmallImageURI>
 		  <Count>0</Count>
-		  <BackgroundImageURI IsRelative="true" IsResource="false">Images/Logo-5b225b1a-58cc-4c2c-908e-3bd49db8b144.png</BackgroundImageURI>
-          <Title>DeviantArt browser</Title>
+		  <BackgroundImageURI IsRelative="true" IsResource="false">Images/Logo-f39fee7d-1a66-4561-bec7-3ef3fde95aee.png</BackgroundImageURI>
+          <Title>dA browser</Title>
           <BackContent></BackContent>
 	      <BackBackgroundImageURI IsRelative="true" IsResource="false">Images/TileBackBackground.png</BackBackgroundImageURI>
-          <BackTitle>DeviantArt browser</BackTitle>
-		  		  <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images/Logo-5b225b1a-58cc-4c2c-908e-3bd49db8b144.png</LargeBackgroundImageURI>
+          <BackTitle>dA browser</BackTitle>
+		  		  <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images/Logo-f39fee7d-1a66-4561-bec7-3ef3fde95aee.png</LargeBackgroundImageURI>
 		  <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">Images/TileBackBackground.png</LargeBackBackgroundImageURI>
  
           <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
